@@ -1,8 +1,9 @@
 # Dota 2 crashes on Linux: VK_ERROR_DEVICE_LOST + random segfaults
 
 **Status (2026-11-27):** root cause **confirmed by memtest86+**: RAM errors on **bit 60** (the same bit flipped in the
-crash pointers) with 4 mixed DIMMs on XMP 3200. See [2026-11-27_memtest/RESULTS.md](2026-11-27_memtest/RESULTS.md).
-Fix (XMP off / DIMM change) not yet applied or verified.
+crash pointers) with 4 mixed DIMMs at 3200 ([run 1](2026-11-27_memtest/RESULTS.md)).
+**Fix applied: DRAM Frequency = DDR4-2400 → memtest PASS, 0 errors** ([run 3](2026-11-27_memtest-2400/RESULTS.md)).
+Still to do: verify in Dota (≥ 1 h with `capture.sh`).
 
 Picking this up? Start with [handout.md](handout.md): what was done, next steps, and the capture/analysis scripts.
 
@@ -69,7 +70,8 @@ This is the classic recipe for marginal memory stability, and it is the prime su
       Original plan for this step: reboot, pick "Memtest86+ (RAM test)" in GRUB, and run
       at least 2 full passes **with the current XMP settings**. Errors (especially in high bits) = confirmed.
 - [x] ~~XMP off only~~: left the RAM at 3200 (only the voltage dropped, most likely) and gave 36 errors in 6.5 min, all bit 60 ([run 2](2026-11-27_memtest-xmp-off/RESULTS.md)).
-- [ ] **Fix A (quick A/B test)**: BIOS → OC → **DRAM Frequency = DDR4-2133**, voltage/timings Auto; memtest must show `DDR4-2133` and 0 errors. Then play Dota ≥ 1 h. No crash = fixed.
+- [x] **Fix A**: BIOS → **DRAM Frequency = DDR4-2400** (user chose 2400 over 2133) → memtest shows `DDR4-2393`, **1 full pass, 0 errors** ([run 3](2026-11-27_memtest-2400/RESULTS.md)).
+- [ ] **Verify in Dota**: play ≥ 1 h at 2400 with `./capture.sh <date>_session2`. No crash / no Xid = fixed.
 - [ ] **Fix B (keep the speed)**: XMP on, but Command Rate 2T, DRAM voltage 1.35 → ~1.38–1.40 V,
       or drop to 3000/2933 MT/s. Re-run memtest; it must give 0 errors before trusting it.
 - [ ] **Fix C (most stable)**: run only one matched pair (2× Kingston or 2× Corsair, in A2+B2) at XMP 3200, 16 GB.

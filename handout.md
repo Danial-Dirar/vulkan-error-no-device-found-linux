@@ -11,7 +11,8 @@ Findings and evidence: [README.md](README.md). Crash-by-crash log: [2026-11-27_s
 - **CONFIRMED by memtest86+ (2026-11-27):** 3 errors in 27 min with XMP on, all on **bit 60**, the same bit as in the
   crash pointers. See [2026-11-27_memtest/RESULTS.md](2026-11-27_memtest/RESULTS.md).
   The GPU, the driver, Dota and gpu-unlock are ruled out (memtest runs without any of them).
-- **Fix: not applied yet.** Next: XMP off → memtest (must be 0 errors) → Dota with `capture.sh`.
+- **Fix applied: DRAM Frequency = DDR4-2400 → memtest PASS (1 full pass, 0 errors)** ([run 3](2026-11-27_memtest-2400/RESULTS.md)).
+  Next: verify in Dota with `capture.sh`.
 
 ## What was done (session 1, 2026-11-27)
 1. 13:59: started live capture (journal incl. kernel, nvidia-smi every 1 s, Dota process watch, CPU temps, Steam game logs).
@@ -32,7 +33,7 @@ Findings and evidence: [README.md](README.md). Crash-by-crash log: [2026-11-27_s
 ## Next steps, in order
 1. ~~memtest86+ with XMP on~~ **Done: FAIL, bit 60** ([RESULTS.md](2026-11-27_memtest/RESULTS.md)).
    ~~XMP off~~ **Did not lower the speed** (still DDR4-3192, 36 errors in 6.5 min, all bit 60): [run 2](2026-11-27_memtest-xmp-off/RESULTS.md).
-2. **BIOS (MSI PRO B660M-P): OC → DRAM Frequency = DDR4-2133** (XMP off alone left it at 3200), DRAM Voltage Auto, timings Auto. Check that memtest shows `DDR4-2133`. Re-run memtest ≥ 1 full pass; it must be 0 errors.
+2. ~~Lower DRAM frequency~~ **Done: DDR4-2400, memtest 1 pass, 0 errors** ([run 3](2026-11-27_memtest-2400/RESULTS.md)).
 3. Play Dota ≥ 1 h while running `./capture.sh <date>_session2`. No crash = fixed.
 4. Optional, to get the speed back: test each kit alone at XMP (2× Kingston in A2+B2, then 2× Corsair) with memtest
    to find the weak side, or run all 4 at 3000/2933, or 3200 with Command Rate 2T / DRAM ~1.38–1.40 V.
