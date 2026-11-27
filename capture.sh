@@ -38,9 +38,9 @@ tail -n 0 -F "$STEAM_LOGS/console-linux.txt" "$STEAM_LOGS/gameprocess_log.txt" \
 (
   prev=""
   while true; do
-    cur=$(pgrep -a -f 'linuxsteamrt64/dota2' | sort)
+    cur=$(pgrep -a -f 'linuxsteamrt64/(dota2|cs2)( |$)' | sort)
     if [ "$cur" != "$prev" ]; then
-      { echo "=== $(date '+%F %T.%3N') process change ==="; echo "${cur:-<no dota2 process>}"; } >> process-watch.log
+      { echo "=== $(date '+%F %T.%3N') process change ==="; echo "${cur:-<no dota2/cs2 process>}"; } >> process-watch.log
       prev="$cur"
     fi
     if [ $((SECONDS % 5)) -eq 0 ]; then

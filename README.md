@@ -216,6 +216,7 @@ Two kits from two vendors share each channel, 2 DIMMs per channel, on XMP. That 
 - [x] memtest86+ at 2400: 1 full pass, **0 errors**
 - [x] **In-game verification:** full match at 2400 with [`capture.sh`](capture.sh) running: no segfault, no Xid, no coredump
   ([session 2 notes](2026-11-27_session2/NOTES.md))
+- [x] CS2 (same engine) at 2400: full shader pre-compile + a short session, no crash ([notes](2026-11-27_cs2-session1/NOTES.md))
 - [ ] Optional: win back speed, 2666 → 2933 at 1.35 V, each step memtest-clean; or test each kit alone at 3200
 
 ---
@@ -226,7 +227,7 @@ These scripts were written for this investigation and work on any systemd + NVID
 
 ```bash
 # 1. Record everything while you play (journal incl. kernel, GPU telemetry every second,
-#    game stdout, process start/exit times, CPU temps). Ctrl+C to stop.
+#    game stdout, Dota 2 / CS2 start/exit times, CPU temps). Ctrl+C to stop.
 ./capture.sh 2026-11-28_session2
 
 # 2. After a crash: dump registers and look for a pointer with one stray high bit
@@ -259,6 +260,7 @@ coredumpctl list                                              # more than one pr
 ├── assets/banner.svg
 ├── 2026-11-27_session1/            ← live capture session: 4 crashes, gdb output, GPU/CPU telemetry, NOTES.md
 ├── 2026-11-27_session2/            ← verification at 2400: full match, 0 crashes (NOTES.md + telemetry)
+├── 2026-11-27_cs2-session1/        ← CS2 at 2400: shader pre-compile + short session, 0 crashes
 ├── 2026-11-27_memtest/             ← run 1 · 3200 · FAIL (photos + RESULTS.md)
 ├── 2026-11-27_memtest-xmp-off/     ← run 2 · still 3200 · FAIL
 └── 2026-11-27_memtest-2400/        ← run 3 · 2400 · PASS
