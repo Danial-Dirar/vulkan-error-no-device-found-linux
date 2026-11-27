@@ -1,0 +1,36 @@
+=== 2026-11-27 13:59:37.935 process change ===
+42432 /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2 +@panorama_min_comp_layer_dimension 0 -prewarm_panorama -dx11
+=== 2026-11-27 14:07:53.450 process change ===
+<no dota2 process>
+=== 2026-11-27 14:08:18.873 process change ===
+68792 /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2 +@panorama_min_comp_layer_dimension 0 -prewarm_panorama -dx11
+=== 2026-11-27 14:23:39.786 process change ===
+68792 [dota2] <defunct>
+=== 2026-11-27 14:23:40.809 process change ===
+<no dota2 process>
+=== 2026-11-27 14:24:04.211 process change ===
+106827 /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2 +@panorama_min_comp_layer_dimension 0 -prewarm_panorama -dx11
+=== 2026-11-27 14:25:19.825 process change ===
+106827 /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2 +@panorama_min_comp_layer_dimension 0 -prewarm_panorama -dx11
+110472 gdb -batch -nx -ex set pagination off -ex info registers -ex x/3i $pc /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2 -c /var/tmp/coredump-BArACT
+=== 2026-11-27 14:25:20.869 process change ===
+106827 /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2 +@panorama_min_comp_layer_dimension 0 -prewarm_panorama -dx11
+=== 2026-11-27 14:25:36.205 process change ===
+106827 /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2 +@panorama_min_comp_layer_dimension 0 -prewarm_panorama -dx11
+111094 gdb -batch -nx -ex set pagination off -ex info registers -ex x/3i $pc /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2 -c /var/tmp/coredump-YJr64i
+=== 2026-11-27 14:25:37.234 process change ===
+106827 /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2 +@panorama_min_comp_layer_dimension 0 -prewarm_panorama -dx11
+=== 2026-11-27 14:26:44.641 process change ===
+<no dota2 process>
+=== 2026-11-27 14:27:05.998 process change ===
+116037 gdb -batch -nx -ex set pagination off -ex info registers -ex x/3i $pc /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2 -c /var/tmp/coredump-z6QYy6
+=== 2026-11-27 14:27:07.014 process change ===
+<no dota2 process>
+=== 2026-11-27 14:27:09.065 process change ===
+116325 /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2 +@panorama_min_comp_layer_dimension 0 -prewarm_panorama -dx11
+=== 2026-11-27 14:50:10.998 process change ===
+<no dota2 process>
+=== 2026-11-27 14:50:30.348 process change ===
+169540 /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2 +@panorama_min_comp_layer_dimension 0 -prewarm_panorama -dx11
+=== 2026-11-27 15:01:29.428 process change ===
+<no dota2 process>

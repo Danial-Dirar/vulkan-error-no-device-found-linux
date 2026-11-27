@@ -1,0 +1,40 @@
+2339(455.572412):  Slamming client tick to server tick.  abs( server tick 4682 - client tick 4674 = 8 ) > ( cl_clockdrift_max_ticks 3.7 + sim ticks 1 + jitter margin 1.8 = 7 )
+2340(456.735133):  PregameHud - SetPreGameVisible 0
+2341(462.912826):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_glimpse_SummaryDescription'
+2342(462.944858):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_glimpse_SummaryDescription'
+2343(463.067248):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_thunder_strike_SummaryDescription'
+2344(463.548304):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_thunder_strike_SummaryDescription'
+2345(464.367352):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_glimpse_SummaryDescription'
+2346(464.398381):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_glimpse_SummaryDescription'
+2347(464.634638):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_glimpse_SummaryDescription'
+2348(465.242235):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_kinetic_field_SummaryDescription'
+2349(465.803016):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_thunder_strike_SummaryDescription'
+2350(465.973887):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_glimpse_SummaryDescription'
+2351(466.127119):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_kinetic_field_SummaryDescription'
+2352(466.530453):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_kinetic_field_SummaryDescription'
+2353(467.588212):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_glimpse_SummaryDescription'
+2354(467.669194):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_thunder_strike_SummaryDescription'
+2355(467.865373):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_glimpse_SummaryDescription'
+2356(468.382611):  Too many non-culled draws (alloc 768, need 928), resizing!
+2357(470.612446):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+2358(470.612462):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+2359(470.612469):  **** Panel DeathCost has fill-parent-flow for width, but isn't in a flowing right layout
+2360(470.612475):  **** Panel DeathTime has fill-parent-flow for width, but isn't in a flowing right layout
+2361(470.612481):  **** Panel BuybackCost has fill-parent-flow for width, but isn't in a flowing right layout
+2362(470.612485):  **** Panel CooldownReady has fill-parent-flow for width, but isn't in a flowing right layout
+2363(470.612491):  **** Panel CooldownNotReady has fill-parent-flow for width, but isn't in a flowing right layout
+2364(470.612495):  **** Panel BuybackGold has fill-parent-flow for width, but isn't in a flowing right layout
+2365(470.612512):  **** Panel QuickbuyGold has fill-parent-flow for width, but isn't in a flowing right layout
+2366(470.612514):  **** Panel QuickbuyAndBuybackGold has fill-parent-flow for width, but isn't in a flowing right layout
+2367(470.612919):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+2368(470.612932):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+2369(470.612943):  **** Panel DeathCost has fill-parent-flow for width, but isn't in a flowing right layout
+2370(470.612952):  **** Panel DeathTime has fill-parent-flow for width, but isn't in a flowing right layout
+2371(470.612963):  **** Panel BuybackCost has fill-parent-flow for width, but isn't in a flowing right layout
+2372(470.612976):  **** Panel CooldownReady has fill-parent-flow for width, but isn't in a flowing right layout
+2373(470.612988):  **** Panel BuybackGold has fill-parent-flow for width, but isn't in a flowing right layout
+2374(480.273005):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_plus_guild_banner_SummaryDescription'
+2375(480.280936):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_plus_high_five_SummaryDescription'
+2376(480.910343):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_plus_high_five_SummaryDescription'
+2377(489.871305):  Engine2PreBreakpadDumpFunction
+2378(489.871315):  Engine2PreBreakpadDumpFunction: Building comment.

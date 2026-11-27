@@ -1,0 +1,207 @@
+## date
+Fri Nov 27 01:59:54 PM +06 2026
+## uname
+Linux MuhammadLinux 7.3.5-2-cachyos #1 SMP PREEMPT_DYNAMIC Fri, 20 Nov 2026 19:34:15 +0000 x86_64 GNU/Linux
+## cmdline
+BOOT_IMAGE=/@/boot/vmlinuz-linux-cachyos root=UUID=d74ab0e6-fa4f-44fb-a00e-e5db3b5ed260 rw rootflags=subvol=@ nowatchdog nvme_load=YES splash loglevel=3 gpu_unlock.targets=0000:01:00.0
+## nvidia driver
+NVRM version: NVIDIA UNIX Open Kernel Module for x86_64  620.73.04  Release Build  (notroot@)  Fri Nov 20 19:49:26 UTC 2026
+GCC version:  Selected multilib: .;@m64
+
+==============NVSMI LOG==============
+
+Timestamp                                              : Fri Nov 27 13:59:54 2026
+Driver Version                                         : 620.73.04 [Deprecated; will be removed in CUDA 14.0. Use KMD Version instead]
+CUDA Version                                           : 13.5 [Deprecated; will be removed in CUDA 14.0. Use CUDA UMD Version instead]
+KMD Version                                            : 620.73.04
+CUDA UMD Version                                       : 13.5
+
+Attached GPUs                                          : 1
+GPU 00000000:01:00.0
+    Product Name                                       : NVIDIA GeForce RTX 3090
+    Product Brand                                      : GeForce
+    Product Architecture                               : Ampere
+    Display Mode                                       : Requested functionality has been deprecated
+    Display Attached                                   : Yes
+    Display Active                                     : Enabled
+    Persistence Mode                                   : Disabled
+    Addressing Mode                                    : HMM
+    MIG Mode
+        Current                                        : N/A
+        Pending                                        : N/A
+    Accounting Mode                                    : Disabled
+    Accounting Mode Buffer Size                        : 4000
+    Driver Model
+        Current                                        : N/A
+        Pending                                        : N/A
+    Serial Number                                      : N/A
+    GPU UUID                                           : GPU-a6846e30-7a12-c009-9b76-d0bb2524b901
+    GPU PDI                                            : 0x4c4a504ab289a0ea
+    Minor Number                                       : 0
+    VBIOS Version                                      : 94.02.42.00.A9
+    MultiGPU Board                                     : No
+    Board ID                                           : 0x100
+    Board Part Number                                  : N/A
+    GPU Part Number                                    : 2204-300-A1
+    FRU Part Number                                    : N/A
+    Platform Info
+        Chassis Serial Number                          : N/A
+        Slot Number                                    : N/A
+        Tray Index                                     : N/A
+        Host ID                                        : N/A
+        Peer Type                                      : N/A
+        Module Id                                      : 1
+        GPU Fabric GUID                                : N/A
+    Inforom Version
+        Image Version                                  : G001.0000.03.03
+        OEM Object                                     : 2.0
+        ECC Object                                     : N/A
+        Power Management Object                        : N/A
+    Inforom BBX Object Flush
+        Latest Timestamp                               : N/A
+        Latest Duration                                : N/A
+    Inforom Time Data
+        Time Run                                       : N/A
+    GPU Uptime                                         : 1067 seconds
+    GPU Operation Mode
+        Current                                        : N/A
+        Pending                                        : N/A
+    GPU C2C Mode                                       : N/A
+## nvidia modparams
+PreserveVideoMemoryAllocations: 2
+EnableS0ixPowerManagement: 0
+S0ixPowerManagementVideoMemoryThreshold: 256
+DynamicPowerManagement: 3
+DynamicPowerManagementVideoMemoryThreshold: 200
+EnableGpuFirmware: 18
+EnableGpuFirmwareLogs: 2
+Y
+Y
+## packages
+cachyos-niri-noctalia 1.4.0-1
+lib32-mesa 3:26.3.1-5
+lib32-nvidia-utils 620.73.04-1
+lib32-opencl-nvidia 620.73.04-1
+lib32-vulkan-icd-loader 1.4.363.0-1
+lib32-vulkan-intel 3:26.3.1-5
+lib32-vulkan-mesa-implicit-layers 3:26.3.1-5
+libva-nvidia-driver 0.0.18-1.1
+linux-cachyos 7.3.5-2
+linux-cachyos-headers 7.3.5-2
+linux-cachyos-lts 6.18.60-3
+linux-cachyos-lts-headers 6.18.60-3
+linux-cachyos-lts-nvidia-open 6.18.60-3
+linux-cachyos-nvidia-open 7.3.5-2
+linux-firmware-nvidia 1:20261019-1
+mesa 3:26.3.1-5
+mesa-utils 9.0.0-7.1
+niri 26.04-1.1
+nvidia-settings 620.73.04-1
+nvidia-utils 620.73.04-1
+opencl-nvidia 620.73.04-1
+steam 1.0.0.87-3
+steam-devices 1.0.0.87-3
+vulkan-icd-loader 1.4.363.0-1.1
+vulkan-intel 3:26.3.1-5
+vulkan-mesa-implicit-layers 3:26.3.1-5
+vulkan-tools 1.4.363.0-1.1
+xorg-xwayland 24.1.15-1
+xwayland-satellite 0.8.3-1.1
+## vulkan
+==========
+VULKANINFO
+==========
+
+Vulkan Instance Version: 1.4.363
+
+
+Instance Extensions: count = 27
+-------------------------------
+VK_EXT_acquire_drm_display             : extension revision 1
+VK_EXT_acquire_xlib_display            : extension revision 1
+VK_EXT_debug_report                    : extension revision 10
+VK_EXT_debug_utils                     : extension revision 2
+VK_EXT_direct_mode_display             : extension revision 1
+VK_EXT_display_surface_counter         : extension revision 1
+VK_EXT_headless_surface                : extension revision 1
+VK_EXT_layer_settings                  : extension revision 2
+VK_EXT_surface_maintenance1            : extension revision 1
+VK_EXT_swapchain_colorspace            : extension revision 5
+VK_KHR_device_group_creation           : extension revision 1
+VK_KHR_display                         : extension revision 23
+VK_KHR_external_fence_capabilities     : extension revision 1
+VK_KHR_external_memory_capabilities    : extension revision 1
+VK_KHR_external_semaphore_capabilities : extension revision 1
+VK_KHR_get_display_properties2         : extension revision 1
+VK_KHR_get_physical_device_properties2 : extension revision 2
+VK_KHR_get_surface_capabilities2       : extension revision 1
+VK_KHR_portability_enumeration         : extension revision 1
+VK_KHR_surface                         : extension revision 25
+VK_KHR_surface_maintenance1            : extension revision 1
+VK_KHR_surface_protected_capabilities  : extension revision 1
+VK_KHR_wayland_surface                 : extension revision 6
+VK_KHR_xcb_surface                     : extension revision 6
+VK_KHR_xlib_surface                    : extension revision 6
+VK_LUNARG_direct_driver_loading        : extension revision 1
+VK_NV_display_stereo                   : extension revision 1
+
+Instance Layers: count = 7
+--------------------------
+VK_LAYER_MESA_device_select       Linux device selection layer 1.4.303  version 1
+VK_LAYER_NV_optimus               NVIDIA Optimus layer         1.4.357  version 1
+VK_LAYER_NV_present               NVIDIA Presentation Layer    1.4.357  version 1
+VK_LAYER_VALVE_steam_fossilize_32 Steam Pipeline Caching Layer 1.3.207  version 1
+VK_LAYER_VALVE_steam_fossilize_64 Steam Pipeline Caching Layer 1.3.207  version 1
+VK_LAYER_VALVE_steam_overlay_32   Steam Overlay Layer          1.3.207  version 1
+VK_LAYER_VALVE_steam_overlay_64   Steam Overlay Layer          1.3.207  version 1
+
+Devices:
+========
+GPU0:
+	apiVersion         = 1.4.357
+	driverVersion      = 620.73.4.0
+	vendorID           = 0x10de
+	deviceID           = 0x2204
+	deviceType         = PHYSICAL_DEVICE_TYPE_DISCRETE_GPU
+	deviceName         = NVIDIA GeForce RTX 3090
+	driverID           = DRIVER_ID_NVIDIA_PROPRIETARY
+	driverName         = NVIDIA
+	driverInfo         = 620.73.04
+	conformanceVersion = 1.4.3.3
+## implicit layers
+/home/muhammad/.local/share/vulkan/implicit_layer.d/:
+steamfossilize_i386.json
+steamfossilize_x86_64.json
+steamoverlay_i386.json
+steamoverlay_x86_64.json
+
+/usr/share/vulkan/implicit_layer.d/:
+nvidia_layers.json
+VkLayer_MESA_device_select.json
+## env
+DISPLAY=:1
+EGL_PLATFORM=wayland
+GDK_BACKEND=wayland
+INVOCATION_ID=21da6e4920264e93af2fece317b10a38
+NIRI_SOCKET=/run/user/1000/niri.wayland-1.1635.sock
+NVCC_CCBIN=/usr/bin/g++
+QT_QPA_PLATFORM=wayland
+QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+VIRTUAL_ENV_DISABLE_PROMPT=1
+WAYLAND_DISPLAY=wayland-1
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+XDG_SESSION_CLASS=user
+XDG_SESSION_DESKTOP=niri
+XDG_SESSION_ID=2
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session1
+XDG_SESSION_TYPE=wayland
+_=/usr/bin/env
+## mem
+               total        used        free      shared  buff/cache   available
+Mem:            31Gi        14Gi       479Mi       419Mi        17Gi        16Gi
+Swap:           95Gi       2.5Gi        92Gi
+NAME           TYPE       SIZE USED PRIO
+/swap/swapfile file        64G   0B   10
+/dev/zram0     partition 31.1G 2.5G  100
+## cpu governor
+powersave

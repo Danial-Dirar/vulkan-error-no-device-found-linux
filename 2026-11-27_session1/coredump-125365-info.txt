@@ -1,0 +1,33 @@
+           PID: 125365 (dota2)
+           TID: 125420 (VKRenderThread)
+           UID: 1000 (muhammad)
+           GID: 1000 (muhammad)
+        Signal: 11 (SEGV) si_code: SEGV_MAPERR
+     Timestamp: Fri 2026-11-27 00:46:32 +06 (13h ago)
+  Command Line: $'/home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2' +@panorama_min_comp_layer_dimension 0 -prewarm_panorama -dx11
+    Executable: /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2
+ Control Group: /user.slice/user-1000.slice/user@1000.service/app.slice/app-steam-app570-125253.scope
+          Unit: user@1000.service
+     User Unit: app-steam-app570-125253.scope
+         Slice: user-1000.slice
+     Owner UID: 1000 (muhammad)
+      Hostname: MuhammadLinux
+       Storage: /var/lib/systemd/coredump/core.dota2.1000.165b5b99953748098c073711ec24cc21.125365.1795718792000000.zst (present)
+  Size on Disk: 1G
+       Message: Process 125365 (dota2) of user 1000 dumped core.
+                
+                Stack trace of thread 125420:
+                #0  0x00007fe347a15950 n/a (libtier0.so + 0x215950)
+                #1  0x00007fe347a19261 n/a (libtier0.so + 0x219261)
+                #2  0x00007fe347a39ae8 Plat_FatalError (libtier0.so + 0x239ae8)
+                #3  0x00007fe3409cf4dd n/a (librendersystemvulkan.so + 0x5cf4dd)
+                #4  0x00007fe3409d71f8 n/a (librendersystemvulkan.so + 0x5d71f8)
+                #5  0x00007fe3409d7d40 n/a (librendersystemvulkan.so + 0x5d7d40)
+                #6  0x00007fe3409dd0f7 n/a (librendersystemvulkan.so + 0x5dd0f7)
+                #7  0x00007fe3409df70c n/a (librendersystemvulkan.so + 0x5df70c)
+                #8  0x00007fe3408af713 n/a (librendersystemvulkan.so + 0x4af713)
+                #9  0x00007fe3408b009d n/a (librendersystemvulkan.so + 0x4b009d)
+                #10 0x00007fe34097cf89 n/a (librendersystemvulkan.so + 0x57cf89)
+                #11 0x00007fe347a627db n/a (libtier0.so + 0x2627db)
+                #12 0x00007fe349eac8ff n/a (/run/host/usr/lib/libc.so.6 + 0xac8ff)
+                ELF object binary architecture: AMD x86-64

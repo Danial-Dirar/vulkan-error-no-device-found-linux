@@ -1,0 +1,30 @@
+           PID: 106827 (dota2)
+           TID: 106900 (VKRenderThread )
+           UID: 1000 (muhammad)
+           GID: 1000 (muhammad)
+        Signal: 11 (SEGV) si_code: SI_KERNEL
+     Timestamp: Fri 2026-11-27 14:26:26 +06 (22s ago)
+  Command Line: $'/home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2' +@panorama_min_comp_layer_dimension 0 -prewarm_panorama -dx11
+    Executable: /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2
+ Control Group: /user.slice/user-1000.slice/user@1000.service/app.slice/app-steam-app570-106701.scope
+          Unit: user@1000.service
+     User Unit: app-steam-app570-106701.scope
+         Slice: user-1000.slice
+     Owner UID: 1000 (muhammad)
+      Hostname: MuhammadLinux
+       Storage: /var/lib/systemd/coredump/core.dota2.1000.66c93c8444d446369c458fa376f362fb.106827.1795767986000000.zst (present)
+  Size on Disk: 1.1G
+       Message: Process 106827 (dota2) of user 1000 dumped core.
+                
+                Stack trace of thread 106900:
+                #0  0x00007fdbac2b2ce5 n/a (/run/host/usr/lib/libc.so.6 + 0xb2ce5)
+                #1  0x00007fdb92b51dbd n/a (librendersystemvulkan.so + 0x551dbd)
+                #2  0x00007fdb92bdcebd n/a (librendersystemvulkan.so + 0x5dcebd)
+                #3  0x00007fdb92bde870 n/a (librendersystemvulkan.so + 0x5de870)
+                #4  0x00007fdb92bdeee4 n/a (librendersystemvulkan.so + 0x5deee4)
+                #5  0x00007fdb92ad5fd2 n/a (librendersystemvulkan.so + 0x4d5fd2)
+                #6  0x00007fdba9d9cd3d n/a (libtier0.so + 0x19cd3d)
+                #7  0x00007fdba9e625aa _ZN7CThread10ThreadProcEPv (libtier0.so + 0x2625aa)
+                #8  0x00007fdba9e627db n/a (libtier0.so + 0x2627db)
+                #9  0x00007fdbac2ac8ff n/a (/run/host/usr/lib/libc.so.6 + 0xac8ff)
+                ELF object binary architecture: AMD x86-64

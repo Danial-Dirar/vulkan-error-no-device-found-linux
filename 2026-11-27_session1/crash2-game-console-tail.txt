@@ -1,0 +1,40 @@
+1199(805.647016):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1200(805.647029):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1201(805.647065):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1202(805.647564):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1203(805.647574):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1204(805.648298):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1205(805.648304):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1206(805.654389):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1207(805.654870):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1208(805.654877):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1209(805.655397):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1210(805.655403):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1211(805.674840):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1212(805.674853):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1213(805.674894):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1214(805.675325):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1215(805.675332):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1216(805.676087):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1217(805.676093):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1218(806.931404):  **** Panel Hint has fill-parent-flow for width, but isn't in a flowing right layout
+1219(810.408430):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1220(810.408897):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1221(810.408903):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1222(810.409761):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1223(810.409771):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1224(812.052665):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1225(812.052692):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1226(812.052808):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1227(812.053429):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1228(812.053442):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1229(812.054619):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1230(812.054631):  **** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+1231(835.981216):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_kinetic_field_SummaryDescription'
+1232(836.068405):  ConstructString failed to localize: '#DOTA_Tooltip_Ability_disruptor_glimpse_SummaryDescription'
+1233(870.798506):  Recv msg 26 (k_ESOMsg_UpdateMultiple), 923 bytes
+1234(870.806368):  Send msg 7534 (k_EMsgClientToGCGetProfileCard), 23 bytes
+1235(871.263850):  Recv msg 7535 (k_EMsgClientToGCGetProfileCardResponse), 50 bytes
+1236(887.466823):  **** Panel Hint has fill-parent-flow for width, but isn't in a flowing right layout
+1237(901.845231):  Engine2PreBreakpadDumpFunction
+1238(901.845237):  Engine2PreBreakpadDumpFunction: Building comment.

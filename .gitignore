@@ -1,0 +1,9 @@
+# Raw captures contain private data (Steam ID, LAN IPs/MACs, emails, process memory).
+# Findings from them are quoted in NOTES.md / README.md.
+**/dumps/
+**/journal-follow.log
+**/steam-logs-follow.log
+**/hang*-snapshot-*.txt
+**/historical-steam-devicelost.txt
+*.dmp
+*.zst

@@ -1,0 +1,2 @@
+Nov 27 13:42:07 cachyos kernel: NVRM: loading NVIDIA UNIX Open Kernel Module for x86_64  620.73.04  Release Build  (notroot@)  Fri Nov 20 19:49:26 UTC 2026
+Nov 27 13:42:10 MuhammadLinux kernel: r8169 0000:04:00.0 eth0: RTL8168h/8111h, 04:7c:16:12:f0:f9, XID 541, IRQ 150

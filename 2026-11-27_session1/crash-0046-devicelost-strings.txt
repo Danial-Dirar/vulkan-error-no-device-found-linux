@@ -1,0 +1,15 @@
+     14 VK_ERROR_DEVICE_LOST
+      5 744(73.272635):  FATAL ERROR: Vulkan encountered unrecoverable error VK_ERROR_DEVICE_LOST.
+      5 742(73.272620):  ERROR! VK call failed! result = VK_ERROR_DEVICE_LOST ( vkQueueSubmit( pQueue, 1, &submitInfo, pFence->Get() ) )
+      5 716(73.262498):  ERROR! VK call failed! result = VK_ERROR_DEVICE_LOST ( vkQueueWaitIdle( VulkanQueue() ) )
+      4 AbortMessage({FATAL ERROR: Vulkan encountered unrecoverable error VK_ERROR_DEVICE_LOST.
+      2 : Vulkan encountered unrecoverable error VK_ERROR_DEVICE_LOST.
+      2 Vulkan encountered unrecoverable error VK_ERROR_DEVICE_LOST.
+      2 _DEVICE_LOST
+      1 kan encountered unrecoverable error VK_ERROR_DEVICE_LOST.
+      1 Fire a fatal error
+      1 FATAL ERROR: Vulkan encountered unrecoverable error VK_ERROR_DEVICE_LOST.
+      1 :ERROR! VK call failed! result = VK_ERROR_DEVICE_LOST ( vkQueueWaitIdle( VulkanQueue() ) )
+      1 Cause the engine to crash by Plat_FatalError on non-main thread (Debug!!)
+      1 Cause the engine to crash by Plat_FatalError on main thread (Debug!!)
+      1 Cause the engine to crash by Plat_FatalError on job thread (Debug!!)

@@ -1,0 +1,44 @@
+           PID: 109489 (dota2)
+           TID: 109489 (dota2)
+           UID: 1000 (muhammad)
+           GID: 1000 (muhammad)
+        Signal: 11 (SEGV) si_code: SI_KERNEL
+     Timestamp: Fri 2026-11-27 00:44:37 +06 (13h ago)
+  Command Line: $'/home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2' +@panorama_min_comp_layer_dimension 0 -prewarm_panorama -dx11
+    Executable: /home/muhammad/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64/dota2
+ Control Group: /user.slice/user-1000.slice/user@1000.service/app.slice/app-steam-app570-109369.scope
+          Unit: user@1000.service
+     User Unit: app-steam-app570-109369.scope
+         Slice: user-1000.slice
+     Owner UID: 1000 (muhammad)
+      Hostname: MuhammadLinux
+       Storage: /var/lib/systemd/coredump/core.dota2.1000.165b5b99953748098c073711ec24cc21.109489.1795718677000000.zst (present)
+  Size on Disk: 1.1G
+       Message: Process 109489 (dota2) of user 1000 dumped core.
+                
+                Stack trace of thread 109489:
+                #0  0x00007f34ff6118d6 n/a (libclient.so + 0x3c118d6)
+                #1  0x00007f3500eaa627 n/a (libclient.so + 0x54aa627)
+                #2  0x00007f3500ecafc1 n/a (libclient.so + 0x54cafc1)
+                #3  0x00007f3500ece628 n/a (libclient.so + 0x54ce628)
+                #4  0x00007f3500f606b6 n/a (libclient.so + 0x55606b6)
+                #5  0x00007f3578851ee3 n/a (libengine2.so + 0x451ee3)
+                #6  0x00007f357889a21d n/a (libengine2.so + 0x49a21d)
+                #7  0x00007f3525a9bae0 n/a (libnetworksystem.so + 0x29bae0)
+                #8  0x00007f3525aa31a6 n/a (libnetworksystem.so + 0x2a31a6)
+                #9  0x00007f3525af2cfb n/a (libnetworksystem.so + 0x2f2cfb)
+                #10 0x00007f3578896798 n/a (libengine2.so + 0x496798)
+                #11 0x00007f35787da6c6 n/a (libengine2.so + 0x3da6c6)
+                #12 0x00007f3578745ef6 n/a (libengine2.so + 0x345ef6)
+                #13 0x00007f3578752b61 n/a (libengine2.so + 0x352b61)
+                #14 0x00007f3578726b2c n/a (libengine2.so + 0x326b2c)
+                #15 0x00007f3578727575 n/a (libengine2.so + 0x327575)
+                #16 0x00007f357870ac20 n/a (libengine2.so + 0x30ac20)
+                #17 0x00007f357871e441 n/a (libengine2.so + 0x31e441)
+                #18 0x00007f357871e7ac Source2Main (libengine2.so + 0x31e7ac)
+                #19 0x0000558fa90ee6d0 n/a (dota2 + 0xb6d0)
+                #20 0x0000558fa90ef7b6 n/a (dota2 + 0xc7b6)
+                #21 0x00007f357c027d0e n/a (/run/host/usr/lib/libc.so.6 + 0x27d0e)
+                #22 0x00007ffda3b66a04 n/a (n/a + 0x0)
+                #23 0x2e2f64616d6d6168 n/a (n/a + 0x0)
+                ELF object binary architecture: AMD x86-64
