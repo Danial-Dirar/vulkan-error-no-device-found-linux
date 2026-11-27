@@ -8,8 +8,10 @@ Findings and evidence: [README.md](README.md). Crash-by-crash log: [2026-11-27_s
   command stream causes NVIDIA Xid 11 and then VK_ERROR_DEVICE_LOST.
 - **Prime suspect:** 4 mixed DIMMs (2× Kingston KF3200C16D4/8GX + 2× Corsair CMK8GX4M1E3200C16, mixed in each channel)
   running XMP 3200 on an i5-12400.
-- **Not confirmed yet.** Next step is memtest86+, which is installed and ready in GRUB.
-- **Fix: not applied yet.**
+- **CONFIRMED by memtest86+ (2026-11-27):** 3 errors in 27 min with XMP on, all on **bit 60**, the same bit as in the
+  crash pointers. See [2026-11-27_memtest/RESULTS.md](2026-11-27_memtest/RESULTS.md).
+  The GPU, the driver, Dota and gpu-unlock are ruled out (memtest runs without any of them).
+- **Fix: not applied yet.** Next: XMP off → memtest (must be 0 errors) → Dota with `capture.sh`.
 
 ## What was done (session 1, 2026-11-27)
 1. 13:59: started live capture (journal incl. kernel, nvidia-smi every 1 s, Dota process watch, CPU temps, Steam game logs).
@@ -28,13 +30,13 @@ Findings and evidence: [README.md](README.md). Crash-by-crash log: [2026-11-27_s
    snapper snapshots 252/253 before and after).
 
 ## Next steps, in order
-1. **memtest86+**: reboot → GRUB → "Memtest86+ (RAM test)" → at least 2 passes **with XMP still on**.
-   Photograph the result (passes, error count, failing addresses and bits).
-2. **Errors found:** BIOS → XMP off (JEDEC) → play Dota ≥ 1 h while running `./capture.sh <date>_session2`.
-   If stable, optionally try XMP at 3000 or 3200 with 2T / DRAM ~1.38–1.40 V (memtest must give 0 errors),
-   or keep only one matched pair of sticks.
-3. **No errors:** A/B the gpu-unlock module. At GRUB press `e` and remove `gpu_unlock.targets=0000:01:00.0`
-   (this boot only), then play Dota ≥ 1 h with capture running.
+1. ~~memtest86+ with XMP on~~ **Done: FAIL, bit 60** ([RESULTS.md](2026-11-27_memtest/RESULTS.md)).
+2. **BIOS (MSI PRO B660M-P): A-XMP → Off** (JEDEC 2133/2400). Re-run memtest ≥ 1 full pass; it must be 0 errors.
+3. Play Dota ≥ 1 h while running `./capture.sh <date>_session2`. No crash = fixed.
+4. Optional, to get the speed back: test each kit alone at XMP (2× Kingston in A2+B2, then 2× Corsair) with memtest
+   to find the weak side, or run all 4 at 3000/2933, or 3200 with Command Rate 2T / DRAM ~1.38–1.40 V.
+   Anything you keep must pass memtest with 0 errors.
+5. If errors persist even at JEDEC: test one stick at a time to find a bad module.
 4. After any crash during verification: `./analyze-core.sh <pid> <session-dir>` and check for the stray-high-bit registers.
 5. Record the outcome in README.md (tick the fix-plan boxes) and in the session's NOTES.md.
 

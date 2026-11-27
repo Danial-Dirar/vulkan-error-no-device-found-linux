@@ -1,6 +1,8 @@
 # Dota 2 crashes on Linux: VK_ERROR_DEVICE_LOST + random segfaults
 
-**Status (2026-11-27):** root cause identified as **memory corruption from a hardware single-bit error**. Fix not yet applied or verified.
+**Status (2026-11-27):** root cause **confirmed by memtest86+**: RAM errors on **bit 60** (the same bit flipped in the
+crash pointers) with 4 mixed DIMMs on XMP 3200. See [2026-11-27_memtest/RESULTS.md](2026-11-27_memtest/RESULTS.md).
+Fix (XMP off / DIMM change) not yet applied or verified.
 
 Picking this up? Start with [handout.md](handout.md): what was done, next steps, and the capture/analysis scripts.
 
@@ -62,7 +64,9 @@ This is the classic recipe for marginal memory stability, and it is the prime su
 - [ ] BIOS: confirm XMP profile, and check for any CPU undervolt / voltage tweaks.
 - [x] memtest86+-efi 9.00 installed and GRUB entry added (2026-11-27 15:06, snapper snapshots 252/253).
       grub-mkconfig also auto-detected `/boot/memtest86+/memtest86x64.efi`, so there may be two Memtest entries; either works.
-- [ ] **Confirm**: reboot, pick "Memtest86+ (RAM test)" in GRUB, and run
+- [x] **Confirmed (2026-11-27, ~15:22–15:50)**: memtest86+ with XMP on → **FAIL, 3 errors in 27 min, all on bit 60**
+      (5.97 GB, 14.2 GB, 32.4 GB). Details and photos: [2026-11-27_memtest/RESULTS.md](2026-11-27_memtest/RESULTS.md).
+      Original plan for this step: reboot, pick "Memtest86+ (RAM test)" in GRUB, and run
       at least 2 full passes **with the current XMP settings**. Errors (especially in high bits) = confirmed.
 - [ ] **Fix A (quick A/B test)**: BIOS → XMP off (2133/2400 JEDEC). Play Dota ≥ 1 h. No crash = fixed.
 - [ ] **Fix B (keep the speed)**: XMP on, but Command Rate 2T, DRAM voltage 1.35 → ~1.38–1.40 V,
