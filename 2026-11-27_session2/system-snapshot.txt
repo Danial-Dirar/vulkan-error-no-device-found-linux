@@ -1,0 +1,84 @@
+## date
+Fri Nov 27 06:09:31 PM +06 2026
+## uname
+Linux MuhammadLinux 7.3.5-2-cachyos #1 SMP PREEMPT_DYNAMIC Fri, 20 Nov 2026 19:34:15 +0000 x86_64 GNU/Linux
+## cmdline
+BOOT_IMAGE=/@/boot/vmlinuz-linux-cachyos root=UUID=d74ab0e6-fa4f-44fb-a00e-e5db3b5ed260 rw rootflags=subvol=@ nowatchdog nvme_load=YES splash loglevel=3 gpu_unlock.targets=0000:01:00.0
+## nvidia driver
+NVRM version: NVIDIA UNIX Open Kernel Module for x86_64  620.73.04  Release Build  (notroot@)  Fri Nov 20 19:49:26 UTC 2026
+GCC version:  Selected multilib: .;@m64
+## memory
+MemTotal:       32637336 kB
+## packages
+cachyos-niri-noctalia 1.4.0-1
+gpu-unlock-dkms 1.1.0-1
+gpu-unlock-firmware 1.1.0-1
+lib32-mesa 3:26.3.1-5
+lib32-nvidia-utils 620.73.04-1
+lib32-opencl-nvidia 620.73.04-1
+lib32-vulkan-icd-loader 1.4.363.0-1
+lib32-vulkan-intel 3:26.3.1-5
+lib32-vulkan-mesa-implicit-layers 3:26.3.1-5
+libva-nvidia-driver 0.0.18-1.1
+linux-cachyos 7.3.5-2
+linux-cachyos-headers 7.3.5-2
+linux-cachyos-lts 6.18.60-3
+linux-cachyos-lts-headers 6.18.60-3
+linux-cachyos-lts-nvidia-open 6.18.60-3
+linux-cachyos-nvidia-open 7.3.5-2
+linux-firmware-nvidia 1:20261019-1
+mesa 3:26.3.1-5
+mesa-utils 9.0.0-7.1
+niri 26.04-1.1
+nvidia-settings 620.73.04-1
+nvidia-utils 620.73.04-1
+opencl-nvidia 620.73.04-1
+steam 1.0.0.87-3
+steam-devices 1.0.0.87-3
+vulkan-icd-loader 1.4.363.0-1.1
+vulkan-intel 3:26.3.1-5
+vulkan-mesa-implicit-layers 3:26.3.1-5
+vulkan-tools 1.4.363.0-1.1
+xorg-xwayland 24.1.15-1
+xwayland-satellite 0.8.3-1.1
+## vulkan
+==========
+VULKANINFO
+==========
+
+Vulkan Instance Version: 1.4.363
+
+
+Instance Extensions: count = 27
+-------------------------------
+VK_EXT_acquire_drm_display             : extension revision 1
+VK_EXT_acquire_xlib_display            : extension revision 1
+VK_EXT_debug_report                    : extension revision 10
+VK_EXT_debug_utils                     : extension revision 2
+VK_EXT_direct_mode_display             : extension revision 1
+VK_EXT_display_surface_counter         : extension revision 1
+VK_EXT_headless_surface                : extension revision 1
+VK_EXT_layer_settings                  : extension revision 2
+VK_EXT_surface_maintenance1            : extension revision 1
+VK_EXT_swapchain_colorspace            : extension revision 5
+VK_KHR_device_group_creation           : extension revision 1
+VK_KHR_display                         : extension revision 23
+VK_KHR_external_fence_capabilities     : extension revision 1
+VK_KHR_external_memory_capabilities    : extension revision 1
+VK_KHR_external_semaphore_capabilities : extension revision 1
+VK_KHR_get_display_properties2         : extension revision 1
+VK_KHR_get_physical_device_properties2 : extension revision 2
+VK_KHR_get_surface_capabilities2       : extension revision 1
+VK_KHR_portability_enumeration         : extension revision 1
+VK_KHR_surface                         : extension revision 25
+VK_KHR_surface_maintenance1            : extension revision 1
+VK_KHR_surface_protected_capabilities  : extension revision 1
+VK_KHR_wayland_surface                 : extension revision 6
+VK_KHR_xcb_surface                     : extension revision 6
+VK_KHR_xlib_surface                    : extension revision 6
+VK_LUNARG_direct_driver_loading        : extension revision 1
+VK_NV_display_stereo                   : extension revision 1
+
+Instance Layers: count = 7
+--------------------------
+VK_LAYER_MESA_device_select       Linux device selection layer 1.4.303  version 1

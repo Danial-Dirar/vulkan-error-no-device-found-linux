@@ -15,7 +15,7 @@
   <br>
   <img alt="Root cause" src="https://img.shields.io/badge/root_cause-RAM_bit_60-critical?style=flat-square">
   <img alt="memtest" src="https://img.shields.io/badge/memtest86%2B_%40_2400-0_errors-success?style=flat-square">
-  <img alt="Status" src="https://img.shields.io/badge/in--game_verification-pending-yellow?style=flat-square">
+  <img alt="Status" src="https://img.shields.io/badge/status-FIXED_%C2%B7_0_crashes_in_game-brightgreen?style=flat-square">
 </p>
 
 <h3 align="center">A crash investigation, from "Vulkan error, device lost" to a single failing wire on the memory bus.</h3>
@@ -26,13 +26,15 @@
 > **TL;DR:** Dota 2 kept crashing on Linux with `VK_ERROR_DEVICE_LOST` and random segfaults. Neither the GPU, the NVIDIA driver,
 > Vulkan, Wayland nor the game was to blame. Four mixed DDR4 sticks running XMP 3200 flipped **bit 60** of 64-bit words in RAM.
 > A flip in a pointer gives a segfault. A flip in a Vulkan command buffer gives `NVRM: Xid 11` and then `DEVICE_LOST`.
-> **Fix: run the RAM at DDR4-2400.** memtest86+ then passes a full pass with 0 errors.
+> **Fix: run the RAM at DDR4-2400.** memtest86+ then passes a full pass with 0 errors, and Dota ran a full match
+> (~70 min, plus ~40 min of all-core shader compiling) with **zero crashes** and higher GPU load than before.
 
 <table>
 <tr>
-<td width="33%" align="center"><h1>🎮 8</h1>Dota crashes captured or recovered<br><sub>11-25 to 11-27, plus a history back to 10-02</sub></td>
-<td width="33%" align="center"><h1>🧬 bit 60</h1>the same bit, every time<br><sub>in crash pointers <i>and</i> in memtest</sub></td>
-<td width="33%" align="center"><h1>✅ 0</h1>memtest errors at DDR4-2400<br><sub>vs 36 errors in 6½ min at 3200</sub></td>
+<td width="25%" align="center"><h1>🎮 8</h1>Dota crashes captured or recovered<br><sub>11-25 to 11-27, plus a history back to 10-02</sub></td>
+<td width="25%" align="center"><h1>🧬 bit 60</h1>the same bit, every time<br><sub>in crash pointers <i>and</i> in memtest</sub></td>
+<td width="25%" align="center"><h1>✅ 0</h1>memtest errors at DDR4-2400<br><sub>vs 36 errors in 6½ min at 3200</sub></td>
+<td width="25%" align="center"><h1>🛡️ 0</h1>crashes in game at DDR4-2400<br><sub>~1 h 50 min of load vs 4 crashes in ~50 min at 3200</sub></td>
 </tr>
 </table>
 
@@ -91,7 +93,7 @@ flowchart LR
     PTR --> SEG["💥 SIGSEGV<br/>Dota 2 · Discord GPU process"]
     DQ -->|"flip lands in a Vulkan<br/>command buffer"| XID["🟥 NVRM: Xid 11<br/>corrupted push buffer"]
     XID --> LOST["💀 VK_ERROR_DEVICE_LOST<br/>FATAL ERROR dialog"]
-    FIX["🛠️ DRAM → DDR4-2400"] -.->|"memtest: 0 errors"| DQ
+    FIX["🛠️ DRAM → DDR4-2400"] -.->|"memtest: 0 errors<br/>Dota: 0 crashes"| DQ
 
     classDef bad fill:#3b1219,stroke:#ff5c5c,color:#ffd7d5
     classDef good fill:#0f2e1d,stroke:#3fb950,color:#d2f8dc
@@ -115,6 +117,7 @@ flowchart LR
 | 8 | **4 sticks, 2 brands, mixed in each channel, XMP 3200** | `dmidecode` | Prime suspect |
 | 9 | memtest86+ at 3200: **FAIL, every readable error on bit 60** | memtest86+ | ✅ Confirmed |
 | 10 | memtest86+ at 2400: **PASS, 0 errors** | memtest86+ | ✅ Fix found |
+| 11 | Dota at 2400: a full match (~70 min) + ~40 min of all-core shader compiling, **0 crashes**, GPU up to 74.5 °C / 378 W | `capture.sh` session 2 | ✅ Fix verified |
 
 ---
 
@@ -175,7 +178,7 @@ Raw gdb output: `2026-11-27_session1/gdb-core-*.txt`.
 | Suspect | Verdict | Why |
 |---|:-:|---|
 | NVIDIA driver / GPU hardware | ❌ | memtest fails with no driver loaded; only one Xid, and it is the "bad input" kind |
-| GPU heat / power / PCIe | ❌ | 62–67 °C and ≤ 262 W of 390 W at the crashes, no thermal/power throttle, gen4 x16 throughout |
+| GPU heat / power / PCIe | ❌ | 62–67 °C and ≤ 262 W of 390 W at the crashes, no thermal/power throttle, gen4 x16 throughout. At 2400 the GPU ran hotter (74.5 °C, 378 W) with no crash |
 | CPU heat | ❌ | package ≤ 69 °C for the whole session |
 | Dota 2 / Source 2 bug | ❌ | Discord crashed the same way; memtest reproduces it without any game |
 | Vulkan / Wayland / niri / xwayland | ❌ | Nothing to do with the memory bus |
@@ -211,7 +214,8 @@ Two kits from two vendors share each channel, 2 DIMMs per channel, on XMP. That 
 - [x] Root cause found in the crash cores (bit 60 / bit 62 pointer flips)
 - [x] Confirmed by memtest86+ at 3200 (FAIL, bit 60)
 - [x] memtest86+ at 2400: 1 full pass, **0 errors**
-- [ ] **In-game verification:** ≥ 1 h of Dota at 2400 with [`capture.sh`](capture.sh) running, no segfault / no Xid
+- [x] **In-game verification:** full match at 2400 with [`capture.sh`](capture.sh) running: no segfault, no Xid, no coredump
+  ([session 2 notes](2026-11-27_session2/NOTES.md))
 - [ ] Optional: win back speed, 2666 → 2933 at 1.35 V, each step memtest-clean; or test each kit alone at 3200
 
 ---
@@ -254,6 +258,7 @@ coredumpctl list                                              # more than one pr
 ├── setup-memtest-grub.sh           ← memtest86+ EFI + GRUB entry
 ├── assets/banner.svg
 ├── 2026-11-27_session1/            ← live capture session: 4 crashes, gdb output, GPU/CPU telemetry, NOTES.md
+├── 2026-11-27_session2/            ← verification at 2400: full match, 0 crashes (NOTES.md + telemetry)
 ├── 2026-11-27_memtest/             ← run 1 · 3200 · FAIL (photos + RESULTS.md)
 ├── 2026-11-27_memtest-xmp-off/     ← run 2 · still 3200 · FAIL
 └── 2026-11-27_memtest-2400/        ← run 3 · 2400 · PASS

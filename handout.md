@@ -3,7 +3,7 @@
 Handoff for whoever picks this up next, whether a future me or a new Claude session.
 Findings and evidence: [README.md](README.md). Crash-by-crash log: [2026-11-27_session1/NOTES.md](2026-11-27_session1/NOTES.md).
 
-## Status (2026-11-27, 15:10)
+## Status (2026-11-27, 20:05): FIXED
 - **Root cause, very likely:** hardware memory bit flips. Corrupted pointers cause segfaults; a corrupted Vulkan
   command stream causes NVIDIA Xid 11 and then VK_ERROR_DEVICE_LOST.
 - **Prime suspect:** 4 mixed DIMMs (2× Kingston KF3200C16D4/8GX + 2× Corsair CMK8GX4M1E3200C16, mixed in each channel)
@@ -12,7 +12,9 @@ Findings and evidence: [README.md](README.md). Crash-by-crash log: [2026-11-27_s
   crash pointers. See [2026-11-27_memtest/RESULTS.md](2026-11-27_memtest/RESULTS.md).
   The GPU, the driver, Dota and gpu-unlock are ruled out (memtest runs without any of them).
 - **Fix applied: DRAM Frequency = DDR4-2400 → memtest PASS (1 full pass, 0 errors)** ([run 3](2026-11-27_memtest-2400/RESULTS.md)).
-  Next: verify in Dota with `capture.sh`.
+- **Verified in game (session 2, 18:09–20:03):** ~40 min of all-core shader compiling + a full Dota match (~70 min),
+  0 segfaults, 0 Xid, 0 coredumps, GPU up to 74.5 °C / 378 W. See [2026-11-27_session2/NOTES.md](2026-11-27_session2/NOTES.md).
+  Two Dota exits at 18:58/18:59 were clean shutdowns during an internet outage, not crashes.
 
 ## What was done (session 1, 2026-11-27)
 1. 13:59: started live capture (journal incl. kernel, nvidia-smi every 1 s, Dota process watch, CPU temps, Steam game logs).
@@ -34,13 +36,14 @@ Findings and evidence: [README.md](README.md). Crash-by-crash log: [2026-11-27_s
 1. ~~memtest86+ with XMP on~~ **Done: FAIL, bit 60** ([RESULTS.md](2026-11-27_memtest/RESULTS.md)).
    ~~XMP off~~ **Did not lower the speed** (still DDR4-3192, 36 errors in 6.5 min, all bit 60): [run 2](2026-11-27_memtest-xmp-off/RESULTS.md).
 2. ~~Lower DRAM frequency~~ **Done: DDR4-2400, memtest 1 pass, 0 errors** ([run 3](2026-11-27_memtest-2400/RESULTS.md)).
-3. Play Dota ≥ 1 h while running `./capture.sh <date>_session2`. No crash = fixed.
+3. ~~Play Dota ≥ 1 h with `capture.sh`~~ **Done: 0 crashes** ([session 2](2026-11-27_session2/NOTES.md)).
 4. Optional, to get the speed back: test each kit alone at XMP (2× Kingston in A2+B2, then 2× Corsair) with memtest
    to find the weak side, or run all 4 at 3000/2933, or 3200 with Command Rate 2T / DRAM ~1.38–1.40 V.
    Anything you keep must pass memtest with 0 errors.
 5. If errors persist even at JEDEC: test one stick at a time to find a bad module.
-4. After any crash during verification: `./analyze-core.sh <pid> <session-dir>` and check for the stray-high-bit registers.
-5. Record the outcome in README.md (tick the fix-plan boxes) and in the session's NOTES.md.
+6. If a crash ever comes back: `./analyze-core.sh <pid> <session-dir>` and check for the stray-high-bit registers.
+   A new bit-60 flip means the RAM is marginal again (e.g. after a BIOS update reset the DRAM frequency to XMP).
+7. Record any change in README.md and in a new session folder's NOTES.md.
 
 ## Tools in this repo
 | File | Purpose |
