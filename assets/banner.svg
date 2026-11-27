@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="t d">
+  <title id="t">VK_ERROR_DEVICE_LOST: it was one bit of RAM</title>
+  <desc id="d">A 64-bit pointer whose top nibble keeps flipping from 0 to 1: bit 60, the RAM data line that failed at DDR4-3200.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#1a0f1f"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.035"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "DejaVu Sans Mono", "Liberation Mono", monospace; }
+      .sans { font-family: -apple-system, "Segoe UI", Ubuntu, Cantarell, "Noto Sans", Helvetica, Arial, sans-serif; }
+      .nib  { fill: #c9d1d9; font-size: 30px; }
+      .box  { fill: #161b2e; stroke: #2d3654; stroke-width: 1.5; }
+      .zero { fill: #c9d1d9; font-size: 30px; opacity: 0; animation: z 3.2s steps(1) infinite; }
+      .one  { fill: #ff5c5c; font-size: 30px; animation: o 3.2s steps(1) infinite; }
+      .hot  { fill: #2a1420; stroke: #ff5c5c; stroke-width: 2; animation: o 3.2s steps(1) infinite; }
+      @keyframes z { 0% { opacity: 1 } 50% { opacity: 0 } 100% { opacity: 1 } }
+      @keyframes o { 0% { opacity: 0 } 50% { opacity: 1 } 100% { opacity: 0 } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="360" fill="url(#bg)"/>
+  <rect width="1200" height="360" fill="url(#grid)"/>
+
+  <text x="70" y="62" class="mono" font-size="15" fill="#7d8590" letter-spacing="2">LINUX · DOTA 2 · VULKAN · POST-MORTEM</text>
+  <text x="68" y="122" class="mono" font-size="52" font-weight="700" fill="#e6edf3">VK_ERROR_DEVICE_LOST</text>
+  <text x="70" y="162" class="sans" font-size="24" fill="#9da7b3">It wasn't the GPU, the driver or the game. It was <tspan fill="#ff7b72" font-weight="700">one bit of RAM</tspan>.</text>
+
+  <!-- the pointer: 0x?0002a7e7cf3820 -->
+  <text x="70" y="250" class="mono nib" fill="#7d8590">0x</text>
+  <g class="mono">
+    <rect x="120" y="214" width="44" height="50" rx="7" class="box"/>
+    <rect x="120" y="214" width="44" height="50" rx="7" class="hot"/>
+    <text x="142" y="250" text-anchor="middle" class="zero">0</text>
+    <text x="142" y="250" text-anchor="middle" class="one" filter="url(#glow)">1</text>
+
+    <rect x="172" y="214" width="44" height="50" rx="7" class="box"/><text x="194" y="250" text-anchor="middle" class="nib">0</text>
+    <rect x="224" y="214" width="44" height="50" rx="7" class="box"/><text x="246" y="250" text-anchor="middle" class="nib">0</text>
+    <rect x="276" y="214" width="44" height="50" rx="7" class="box"/><text x="298" y="250" text-anchor="middle" class="nib">0</text>
+
+    <rect x="340" y="214" width="44" height="50" rx="7" class="box"/><text x="362" y="250" text-anchor="middle" class="nib">0</text>
+    <rect x="392" y="214" width="44" height="50" rx="7" class="box"/><text x="414" y="250" text-anchor="middle" class="nib">2</text>
+    <rect x="444" y="214" width="44" height="50" rx="7" class="box"/><text x="466" y="250" text-anchor="middle" class="nib">a</text>
+    <rect x="496" y="214" width="44" height="50" rx="7" class="box"/><text x="518" y="250" text-anchor="middle" class="nib">7</text>
+
+    <rect x="560" y="214" width="44" height="50" rx="7" class="box"/><text x="582" y="250" text-anchor="middle" class="nib">e</text>
+    <rect x="612" y="214" width="44" height="50" rx="7" class="box"/><text x="634" y="250" text-anchor="middle" class="nib">7</text>
+    <rect x="664" y="214" width="44" height="50" rx="7" class="box"/><text x="686" y="250" text-anchor="middle" class="nib">c</text>
+    <rect x="716" y="214" width="44" height="50" rx="7" class="box"/><text x="738" y="250" text-anchor="middle" class="nib">f</text>
+
+    <rect x="780" y="214" width="44" height="50" rx="7" class="box"/><text x="802" y="250" text-anchor="middle" class="nib">3</text>
+    <rect x="832" y="214" width="44" height="50" rx="7" class="box"/><text x="854" y="250" text-anchor="middle" class="nib">8</text>
+    <rect x="884" y="214" width="44" height="50" rx="7" class="box"/><text x="906" y="250" text-anchor="middle" class="nib">2</text>
+    <rect x="936" y="214" width="44" height="50" rx="7" class="box"/><text x="958" y="250" text-anchor="middle" class="nib">0</text>
+  </g>
+
+  <path d="M142 272 V292 H180" fill="none" stroke="#ff5c5c" stroke-width="1.5"/>
+  <text x="188" y="297" class="mono" font-size="15" fill="#ff7b72">bit 60 · DRAM data line DQ60 · flips at DDR4-3200, 0 errors at DDR4-2400</text>
+
+  <text x="1010" y="236" class="mono" font-size="14" fill="#7d8590">valid pointer</text>
+  <text x="1010" y="256" class="mono" font-size="14" fill="#7d8590">+ 1 flipped bit</text>
+  <text x="1010" y="276" class="mono" font-size="14" fill="#ff7b72">= SIGSEGV</text>
+
+  <text x="70" y="336" class="mono" font-size="13" fill="#484f58">dota2 · Discord GPU process · NVRM Xid 11 · memtest86+ · every readable memtest error: bit 60</text>
+</svg>
