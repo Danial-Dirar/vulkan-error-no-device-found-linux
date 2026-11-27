@@ -31,7 +31,8 @@ Findings and evidence: [README.md](README.md). Crash-by-crash log: [2026-11-27_s
 
 ## Next steps, in order
 1. ~~memtest86+ with XMP on~~ **Done: FAIL, bit 60** ([RESULTS.md](2026-11-27_memtest/RESULTS.md)).
-2. **BIOS (MSI PRO B660M-P): A-XMP → Off** (JEDEC 2133/2400). Re-run memtest ≥ 1 full pass; it must be 0 errors.
+   ~~XMP off~~ **Did not lower the speed** (still DDR4-3192, 36 errors in 6.5 min, all bit 60): [run 2](2026-11-27_memtest-xmp-off/RESULTS.md).
+2. **BIOS (MSI PRO B660M-P): OC → DRAM Frequency = DDR4-2133** (XMP off alone left it at 3200), DRAM Voltage Auto, timings Auto. Check that memtest shows `DDR4-2133`. Re-run memtest ≥ 1 full pass; it must be 0 errors.
 3. Play Dota ≥ 1 h while running `./capture.sh <date>_session2`. No crash = fixed.
 4. Optional, to get the speed back: test each kit alone at XMP (2× Kingston in A2+B2, then 2× Corsair) with memtest
    to find the weak side, or run all 4 at 3000/2933, or 3200 with Command Rate 2T / DRAM ~1.38–1.40 V.
